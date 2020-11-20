@@ -1,8 +1,8 @@
 {
-    "name": "sylius/plugin-skeleton",
+    "name": "vaachar/sylius-archivable-products-plugin",
     "type": "sylius-plugin",
     "keywords": ["sylius", "sylius-plugin"],
-    "description": "Acme example plugin for Sylius.",
+    "description": "A sylius plugin to add archiving to products.",
     "license": "MIT",
     "require": {
         "php": "^7.3",
@@ -41,8 +41,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "VaaChar\\SyliusArchivableProductsPlugin\\": "src/",
+            "Tests\\VaaChar\\SyliusArchivableProductsPlugin\\": "tests/"
         }
     },
     "autoload-dev": {
