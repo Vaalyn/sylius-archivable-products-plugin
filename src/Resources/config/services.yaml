@@ -1,0 +1,21 @@
+services:
+    sylius_archivable_products_plugin.product.type_extension:
+        class: VaaChar\SyliusArchivableProductsPlugin\Form\ProductTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\ProductBundle\Form\Type\ProductType }
+
+    sylius_archivable_products_plugin.listener.admin.product.form.menu_builder:
+        class: VaaChar\SyliusArchivableProductsPlugin\Menu\AdminProductFormMenuListener
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.product.form, method: addItems }
+
+    sylius_archivable_products_plugin.api.doctrine.query_collection_extension.hide_archived_product:
+        class: VaaChar\SyliusArchivableProductsPlugin\Doctrine\QueryCollectionExtension\HideArchivedProductExtension
+        tags:
+            - { name: api_platform.doctrine.orm.query_extension.collection }
+        arguments: ['VaaChar\SyliusArchivableProductsPlugin\Entity\IsArchivableProductInterface']
+
+    sylius_archivable_products_plugin.entity_listener.product_variant:
+        class: VaaChar\SyliusArchivableProductsPlugin\Entity\EntityListener\ProductVariantEntityListener
+        tags:
+            - { name: doctrine.orm.entity_listener, entity: Sylius\Component\Core\Model\ProductVariant, event: preUpdate }

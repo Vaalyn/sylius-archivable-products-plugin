@@ -1,0 +1,14 @@
+sylius_admin_product_archive:
+    path: /products/{id}/archive
+    methods: [PATCH]
+    defaults:
+        _controller: sylius.controller.product:updateAction
+        _sylius:
+            section: admin
+            permission: true
+            template: '@SyliusUi/Grid/Action/archive.html.twig'
+            form:
+                type: VaaChar\SyliusArchivableProductsPlugin\Form\Type\ArchivableType
+            redirect:
+                route: sylius_admin_product_index
+                parameters: {}

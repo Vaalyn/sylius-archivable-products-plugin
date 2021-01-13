@@ -1,0 +1,8 @@
+sylius_archivable_products_plugin:
+    ui:
+        archival: Archiv
+        archive: Archive
+    form:
+        product:
+            archived_at: Archived at
+            archive_when_out_of_stock: Archive when out of stock

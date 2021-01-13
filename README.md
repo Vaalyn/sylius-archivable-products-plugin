@@ -1,12 +1,6 @@
-<p align="center">
-    <a href="https://sylius.com" target="_blank">
-        <img src="https://demo.sylius.com/assets/shop/img/logo.png" />
-    </a>
-</p>
-
 <h1 align="center">Sylius Archivable Products Plugin</h1>
 
-<p align="center">Plugin to make products archivable when they shouldn't be used anymore. Also includes the option to archive products automatically when they reach a stock of 0 on all vairants.</p>
+<p align="center">Plugin to make products archivable when they shouldn't be available anymore. Also includes the option to archive products automatically when they reach a stock of 0 on all variants.</p>
 
 ## Quickstart Installation
 
@@ -21,7 +15,7 @@ composer require vaachar/sylius-archivable-products-plugin
 
 3. Use trait and add interface to `src/Entity/Product/Product.php`
 ```
-class Product extends BaseProduct implements HasArchivableProductInterface
+class Product extends BaseProduct implements IsArchivableProductInterface
 {
     use ArchivableProductTrait;
 
@@ -33,3 +27,17 @@ class Product extends BaseProduct implements HasArchivableProductInterface
 ```
 bin/console doctrine:migrations:migrate
 ```
+
+## Usage
+
+This plugin adds a new menu entry to the side menu when creating or editing a product called `Archive`.
+
+There you can activate the `Archive when out of stock` option to let this plugin automatically disable a product and archive it. You can also manually enter a date/time to archive the product there.
+
+![](https://github.com/Vaalyn/sylius-archivable-products-plugin/raw/master/screenshots/product_side_menu.png)
+
+![](https://github.com/Vaalyn/sylius-archivable-products-plugin/raw/master/screenshots/product_archive_menu.png)
+
+On the admin product listing page you can also quickly archive a product via the `Archive` action button.
+
+![](https://github.com/Vaalyn/sylius-archivable-products-plugin/raw/master/screenshots/product_list_archive_button.png)

@@ -1,2 +1,17 @@
 imports:
     - { resource: "@SyliusArchivableProductsPlugin/Resources/config/services.yaml" }
+
+sylius_grid:
+    grids:
+        sylius_admin_product:
+            filters:
+                archival:
+                    type: exists
+                    label: sylius_archivable_products_plugin.ui.archival
+                    options:
+                        field: archivedAt
+                    default_value: false
+            actions:
+                item:
+                    archive:
+                        type: archive

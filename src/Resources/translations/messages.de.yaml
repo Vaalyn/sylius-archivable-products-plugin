@@ -1,0 +1,8 @@
+sylius_archivable_products_plugin:
+    ui:
+        archival: Archival
+        archive: Archivieren
+    form:
+        product:
+            archived_at: Archiviert am
+            archive_when_out_of_stock: Archivieren wenn Lagerbestand leer

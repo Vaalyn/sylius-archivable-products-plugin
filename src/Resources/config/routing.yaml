@@ -1,0 +1,3 @@
+sylius_archivable_products_plugin_admin:
+    resource: "@SyliusArchivableProductsPlugin/Resources/config/routing/admin.yaml"
+    prefix: /admin

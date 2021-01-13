@@ -1,0 +1,22 @@
+<div class="ui tab" data-tab="archivable_product">
+  <h3 class="ui top attached header">{{ 'sylius_archivable_products_plugin.ui.archive'|trans }}</h3>
+  <div class="ui attached segment">
+    <div class="ui column stackable grid" id="vaachar-archivable-product">
+        <div class="ui column stackable grid">
+            <div class="column">
+                <div class="ui segment">
+                    <div class="ui two column stackable grid">
+                        <div class="ui column">
+                            {{ form_row(form.archivedAt) }}
+                        </div>
+                        <div class="ui column">
+                            {{ form_row(form.archiveWhenOutOfStock) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  {{ sonata_block_render_event('sylius.admin.product.' ~ action ~ '.tab_archivable_product', {'form': form}) }}
+</div>
